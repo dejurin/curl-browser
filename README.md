@@ -11,26 +11,29 @@
 
 ## Usage
 
-    <?php
+  Create an instance of `CurlBrowser` and have fun!
+
     require_once dirname(__FILE__).'/../vendor/curl-browser/curl-browser.php';
-    
     $browser = new CurlBrowser;
-    
-    // Visit websites
+
+  Visit websites
+
     $browser->get('http://www.example.com/index.php');
     preg_match("/some desired data inside page/", $browser->content);
-    
-    // Send forms
+
+  Send forms
+
     $postData = array(
       'firstField'  => 'foo',
       'secondField' => 'bar'
     );
     $browser->post('http://www.example.com/form.php', $postData);
-    
-    // Download a file
+
+  Download files
+
     $browser->download('http://www.example.com/file.zip', 'files/example.zip');
-    
-    // Get cookie info
-    echo $browser->cookie['jsessionid'];
-    ?>
+
+  Get cookies data
+
+    echo $browser->cookies['jsessionid'];
 
