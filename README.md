@@ -37,3 +37,13 @@
 
     echo $browser->cookies['jsessionid'];
 
+## If you need more control
+
+  You can set any curl option:
+
+    $browser->options['useragent'] = "MyPHPScript/4.0";
+    $browser->options['ssl_verifypeer'] = 1;
+    // just set the options you want without the prefix "CURLOPT_"
+
+  To get a list with all available options, visit:
+  [http://www.php.net/manual/en/function.curl-setopt.php](http://www.php.net/manual/en/function.curl-setopt.php)
